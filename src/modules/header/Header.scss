@@ -1,0 +1,17 @@
+@import '../../assets/colors.scss';
+@import '../../assets/mixins.scss';
+
+.Header {
+    background-color: $dark-blue-dark-mode;
+    padding: 20px 30px;
+
+    &-Text {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    @include desktop {
+        padding: 20px 80px;
+    }
+
+}

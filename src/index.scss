@@ -1,0 +1,30 @@
+// Nunito
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+// Color Variables
+@import 'assets/colors.scss';
+
+// Global
+@import 'assets/global.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-rows: auto 1fr auto;  
+  margin: 0 auto;
+  max-width: 1440px;
+  min-height: 100vh;
+  background-color: $very-dark-blue-dark-mode;
+  font-size: 14px;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}

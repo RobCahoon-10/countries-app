@@ -39,20 +39,6 @@ $ npm test
 $ npm run-script build
 ```
 
-#### Pull/Push Existing content
-
-Use the following command to pull assets, content, and types, ignoring timestamps. This allows you to pull these artifacts whether they were modified or not since the last successful pull or push, to or from this working directory.
-
-```sh
-wchtools pull -act -I -v
-```
-
-Use the following command to push all categories, assets, content items, and content types from a specific directory. The -I switch pushes even unmodified items.
-
-```sh
-wchtools push -Cact -v --I 
-```
-
 ### External Links
  - [API reference](https://restcountries.eu/rest/v2/)
  - [API documentation](https://restcountries.eu/)
