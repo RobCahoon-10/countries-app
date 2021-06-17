@@ -4,24 +4,28 @@ import './CountryPanel.scss'
 
 const CountryPanel = (props) => {
 
-    console.log(props.content)
-
     return (
-        <div className="Country">
-            {/* <Image data={image} /> */}
-            <ul>
-                <li></li>
-                <li>
-                    <strong>Population:</strong>
-                </li>
-                <li>
-                    <strong>Region:</strong>
-                </li>
-                <li>
-                    <strong>Capital:</strong>
-                </li>
-            </ul>
-        </div>
+        <section className="CountryHolder">
+            {props.content?.slice(0, props.count).map((item) => { 
+
+                const {name, flag, population, region, capital} = item
+                const imageData = {url: flag, altText: name }
+
+                return (    
+                    <div key={name} className="Country">
+                        <Image className="Country-Flag" data={imageData} /> 
+                        <ul className="Country-Details">
+                            <li className="Country-Details-Name">{name}</li>
+                            <li><strong>Population: </strong> {population}</li>
+                            <li><strong>Region: </strong> {region}</li>
+                            <li><strong>Capital: </strong> {capital}</li>
+                        </ul>
+                    </div>
+                )
+                
+            })}
+
+        </section>
     )
 }
 

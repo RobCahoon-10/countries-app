@@ -1,0 +1,47 @@
+.CountryDetails {
+    &-Flag {
+
+    }
+
+    &-Name {
+
+    }
+
+    &-List {
+        &--Comma {
+            &:not(:empty) {
+                ~ {
+                    --Comma {
+                        &:not(:empty) {
+                            &:before {
+                                content: ", ";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // &--Comma:not(:empty) ~ --Comma::not(:empty):before {
+        //     content: ", ";
+        // }
+    }
+
+    &-BorderCountries {
+
+    }
+}
+
+.comma {
+	&:not(:empty) {
+		~ {
+			.comma {
+				&:not(:empty) {
+					&:before {
+						content: ", ";
+					}
+				}
+			}
+		}
+	}
+}

@@ -8,6 +8,7 @@ Frontend Mentor REST Countries API with color theme switcher - React implementat
 - [Axios](https://github.com/axios/axios): Promise based HTTP client
 - [React Router](https://reactrouter.com/): Declarative Routing
 - [Node Sass](https://github.com/sass/node-sass): Sass Compiler (libsass)
+- [Font Awesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react): Font Awesome
 
 ## Dev Dependencies
 

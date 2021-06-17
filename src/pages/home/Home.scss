@@ -1,0 +1,33 @@
+@import '../../assets/colors.scss';
+@import '../../assets/mixins.scss';
+
+.Filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+
+    @include for-tablet-portrait-up  {
+        grid-template-columns: 60% 40%;
+        padding: 40px 25px;
+    }
+
+    @include for-tablet-landscape-up   {
+        grid-template-columns: 70% 30%;
+        padding: 40px 60px;
+    }
+
+    @include for-desktop-up  {
+        grid-template-columns: 70% 30%;
+        padding: 40px 70px;
+
+        &-Left {
+            justify-content: left;
+        }
+
+        &-Right {
+            justify-content: right;
+        }
+    }
+
+
+}

@@ -10,7 +10,7 @@
         font-size: 14px;
     }
 
-    @include desktop {
+    @include for-desktop-up  {
         padding: 20px 80px;
     }
 

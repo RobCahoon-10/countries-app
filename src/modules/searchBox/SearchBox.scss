@@ -1,0 +1,63 @@
+@import '../../assets/colors.scss';
+@import '../../assets/mixins.scss';
+
+.SearchBox {
+    position:relative;
+    padding: 15px 0 15px 20px;
+    background-color: $dark-blue-dark-mode;
+    direction: ltr;
+    margin: 20px 0;
+    border-radius: 10px;
+    height: 50px;
+
+    @include for-tablet-portrait-up  {
+        margin: 0;
+    }
+
+    @include for-desktop-up { 
+        margin: 0;
+        width: 50%;
+    }
+
+    &-SearchIcon {
+        position: absolute;
+        left: 20px;
+        top: 14px;
+        width: 24px;
+        height: 24px;
+    }
+
+    &-RemoveIcon {
+        display: none;
+        
+        &--Show {
+            display: block;
+            position: absolute;
+            top: 14px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &-Input {
+        height: 20px;
+        margin:0;
+        padding-left: 30px;
+        width: 100%;
+        background-color: $dark-blue-dark-mode;
+        border: none;
+        outline: none;
+        color: $white;
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $white;
+            opacity: 1; /* Firefox */
+        }
+    }
+}

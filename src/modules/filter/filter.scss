@@ -1,0 +1,71 @@
+@import '../../assets/colors.scss';
+@import '../../assets/mixins.scss';
+
+.Filter {
+    display: grid;
+    justify-content: left;
+    position: relative;
+    margin: 20px 0 10px;
+
+    @include for-tablet-portrait-up  {
+        justify-content: right;
+        margin: 0;
+    }
+
+    @include for-desktop-up {
+        justify-content: right;
+        margin: 0;
+    }
+    
+    &-Container {
+        display: grid;
+        grid-template-columns: 90% 10%;
+        padding: 14px 20px;
+        height: 50px;
+        color: white;
+        width: 180px;
+        background-color: $dark-blue-dark-mode;
+        cursor: pointer;
+        border-radius: 10px;
+
+        @include for-desktop-up  {
+            width: 250px;
+        }
+
+        &-Text {
+            margin: 0;
+            padding: 0;
+        }
+
+        &-Icon {
+            margin: 2px 0 0;
+        }
+
+    }
+
+    &-Dropdown {
+        position: absolute;
+        border-radius: 10px;
+        width: 180px;
+        top: 60px;
+        left: 0;
+        z-index: 10;
+        margin: 0;
+        padding: 10px 20px;
+        list-style-type: none;
+        background-color: $dark-blue-dark-mode;
+
+        @include for-desktop-up  {
+            right: 0;
+            left: auto;
+            width: 250px;
+        }
+
+        li {
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+    }
+
+}

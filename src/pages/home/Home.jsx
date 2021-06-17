@@ -1,30 +1,35 @@
 import React, { useEffect }  from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CountryPanel from '../../modules/countryPanel/CountryPanel';
+import Filter from '../../modules/filter/Filter';
 import Header from '../../modules/header/Header';
+import SearchBox from '../../modules/searchBox/SearchBox';
 import { loadData } from "../../redux/countrySlice";
 
 import './Home.scss'
 
 const Home = (props) => {
     const dispatch = useDispatch();
-    // const countries = data.slice(0, 10)
+    const  { data, loading, displayCount, regionFilterOn, regionSelected }  = useSelector((state) => state.country)
 
     useEffect(() => {
         dispatch(loadData());
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-    const  { data }  = useSelector((state) => state.country)
-
     return (
         <div>
             <Header />
+
+            <section className="Filters">
+                <div className="Filters-Left"> 
+                    <SearchBox regionFilter={regionFilterOn} selectedRegion={regionSelected} />
+                </div>
+                <div className="Filters-Right">
+                    <Filter />
+                </div>
+            </section>
             
-            {data && data?.map((item) => (
-                <section className="Country-Panel">
-                    <CountryPanel content={item} />
-                </section>
-            ))}
+            {!loading && <CountryPanel content={data} count={displayCount} /> }
 
         </div>
     )
