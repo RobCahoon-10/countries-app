@@ -1,14 +1,18 @@
-@import '../../assets/colors.scss';
 @import '../../assets/mixins.scss';
+// Global
+@import '../../assets/global.scss';
 
 .SearchBox {
     position:relative;
     padding: 15px 0 15px 20px;
-    background-color: $dark-blue-dark-mode;
+    background-color: var(--color-secondary);
     direction: ltr;
     margin: 20px 0;
     border-radius: 10px;
     height: 50px;
+    -moz-box-shadow: 0 0 3px var(--color-shadow);
+    -webkit-box-shadow: 0 0 3px var(--color-shadow);
+    box-shadow: 0 0 3px var(--color-shadow);
 
     @include for-tablet-portrait-up  {
         margin: 0;
@@ -45,10 +49,10 @@
         margin:0;
         padding-left: 30px;
         width: 100%;
-        background-color: $dark-blue-dark-mode;
+        background-color: var(--color-secondary);
         border: none;
         outline: none;
-        color: $white;
+        color: var(--font-color);
 
         &:focus {
             border: none;
@@ -56,7 +60,7 @@
         }
 
         &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-            color: $white;
+            color: var(--color-accent);
             opacity: 1; /* Firefox */
         }
     }

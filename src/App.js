@@ -9,7 +9,7 @@ function App() {
     <main>
         <Switch>
           <Route path='/' component={Home} exact />
-          <Route path='/:country' component={Country} exact />
+          <Route path='/:country' component={Country} />
           <Route component={Error} />
         </Switch>
     </main>

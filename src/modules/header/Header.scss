@@ -1,17 +1,31 @@
-@import '../../assets/colors.scss';
 @import '../../assets/mixins.scss';
+// Global
+@import '../../assets/global.scss';
 
 .Header {
-    background-color: $dark-blue-dark-mode;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    background-color: var(--color-secondary);
     padding: 20px 30px;
 
     &-Text {
         margin: 0;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     @include for-desktop-up  {
+        grid-template-columns: 90% 10%;
         padding: 20px 80px;
+    }
+
+    &-Switcher {   
+        cursor: pointer;
+
+        span {
+            display: inline-block;
+            margin: 0 0 0 15px;
+            font-size: 14px;
+        }
     }
 
 }

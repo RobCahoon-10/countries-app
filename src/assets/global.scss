@@ -1,2 +1,18 @@
 @import './mixins.scss';
 
+.Theme-Light {
+    --color-primary: #FAFAFA;
+    --color-secondary: #ffffff;
+    --color-accent: #858585;
+    --font-color: #000000;
+    --color-shadow: #ccc;
+}
+
+.Theme-Dark {
+    --color-primary: #2B3945;
+    --color-secondary: #202C37;
+    --color-accent: #ffffff;
+    --font-color: #ffffff;
+    --color-shadow: #202C37;
+}
+  

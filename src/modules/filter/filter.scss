@@ -1,5 +1,6 @@
-@import '../../assets/colors.scss';
 @import '../../assets/mixins.scss';
+// Global
+@import '../../assets/global.scss';
 
 .Filter {
     display: grid;
@@ -22,11 +23,14 @@
         grid-template-columns: 90% 10%;
         padding: 14px 20px;
         height: 50px;
-        color: white;
+        color: var(--font-color);
         width: 180px;
-        background-color: $dark-blue-dark-mode;
+        background-color: var(--color-secondary);
         cursor: pointer;
         border-radius: 10px;
+        -moz-box-shadow: 0 0 3px var(--color-shadow);
+        -webkit-box-shadow: 0 0 3px var(--color-shadow);
+        box-shadow: 0 0 3px var(--color-shadow);
 
         @include for-desktop-up  {
             width: 250px;
@@ -53,7 +57,10 @@
         margin: 0;
         padding: 10px 20px;
         list-style-type: none;
-        background-color: $dark-blue-dark-mode;
+        background-color: var(--color-secondary);
+        -moz-box-shadow: 0 0 3px var(--color-shadow);
+        -webkit-box-shadow: 0 0 3px var(--color-shadow);
+        box-shadow: 0 0 3px var(--color-shadow);
 
         @include for-desktop-up  {
             right: 0;

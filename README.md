@@ -1,5 +1,4 @@
 # Countries
-
 Frontend Mentor REST Countries API with color theme switcher - React implementation
 
 ## Dependencies
@@ -13,7 +12,6 @@ Frontend Mentor REST Countries API with color theme switcher - React implementat
 ## Dev Dependencies
 
 ## Folder Structure
-<!-- - **acoistic/**: Latest backup of Acoustic Content -->
 - **public/**: Static assets and html files
 - **src/api/**: API related modules
 - **src/assets/**: Static assets like images, fonts, icons, scss files
@@ -21,23 +19,17 @@ Frontend Mentor REST Countries API with color theme switcher - React implementat
 - **src/pages/**: pages are template of the page types defined on Acoustic content.
 - **src/modules/**: modules are uses components to build more complicated structures (Example: Carousel, Header )
 - **src/redux/**: Redux Store related files
-- **src/routers/**: Depending on variables routers are manage data flow to related modules.
 - **src/utilities**: Contains reusable helper functions which prevents code polution.
-
-## Development
-
-
-## Test
-<!-- - [Jest](https://jestjs.io/) : JavaScript Testing Framework
-- [Enzyme](https://enzymejs.github.io/enzyme/) Enzyme is a JavaScript Testing utility for React -->
-
-<!-- ```sh
-$ npm test
-``` -->
 
 ## Build
 ```sh
 $ npm run-script build
+```
+
+## Run
+```sh
+$ npm install
+$ npm start
 ```
 
 ### External Links

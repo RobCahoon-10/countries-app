@@ -1,31 +1,35 @@
 import React from 'react'
 import Image from '../../components/image/Image'
+import Link from '../../components/link/Link'
 import './CountryPanel.scss'
 
 const CountryPanel = (props) => {
 
     return (
-        <section className="CountryHolder">
-            {props.content?.slice(0, props.count).map((item) => { 
+        <>
+            {props.content.map((item) => { 
 
                 const {name, flag, population, region, capital} = item
                 const imageData = {url: flag, altText: name }
-
+                const href = "/" + name
+                const populationFormatted = population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                
                 return (    
                     <div key={name} className="Country">
-                        <Image className="Country-Flag" data={imageData} /> 
+                        <Link href={href}>
+                            <Image className="Country-Flag" data={imageData} /> 
+                        </Link>
                         <ul className="Country-Details">
                             <li className="Country-Details-Name">{name}</li>
-                            <li><strong>Population: </strong> {population}</li>
-                            <li><strong>Region: </strong> {region}</li>
-                            <li><strong>Capital: </strong> {capital}</li>
+                            <li><span>Population: </span> {populationFormatted}</li>
+                            <li><span>Region: </span> {region}</li>
+                            <li><span>Capital: </span> {capital}</li>
                         </ul>
                     </div>
                 )
                 
-            })}
-
-        </section>
+            })}            
+        </>
     )
 }
 

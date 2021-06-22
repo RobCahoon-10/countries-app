@@ -1,13 +1,104 @@
-.CountryDetails {
-    &-Flag {
+@import '../../assets/mixins.scss';
 
+// Global
+@import '../../assets/global.scss';
+
+.CountryDetails {
+    padding: 0 40px;
+    width: 100%;
+    position: relative;
+
+    @include for-desktop-up  {
+        padding: 0 70px;
+    }
+    
+    &-Main {
+        display: grid;
+
+        @include for-desktop-up  {
+            grid-template-columns: 50% 50%;
+        }
+    }
+
+    &-Left {
+        margin-top: 30px;
+    }
+
+    &-Right {
+        margin-top: 30px;
+
+        @include for-desktop-up  {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 80px 150px 100px;
+        }
+    }
+
+    &-BackButton {
+        width: 35%;
+        height: 35px;
+        margin: 20px 0 0;
+        padding: 7px 20px;
+        background-color: var(--color-secondary);
+        cursor: pointer;
+        -moz-box-shadow: 0 0 3px var(--color-shadow);
+        -webkit-box-shadow: 0 0 3px var(--color-shadow);
+        box-shadow: 0 0 3px var(--color-shadow);
+        border-radius: 5px;
+
+        @include for-desktop-up  {
+            width: 8%;
+        }
+        
+        button {
+            border: none;
+            margin-left: 5px;
+            background: none;
+            cursor: pointer;
+            color: var(--font-color);
+        }
+    }
+
+    &-Flag {
+        display: block;
+        max-width: 295px;
+        max-height: 235px;
+        width: auto;
+        height: auto;
+
+        @include for-desktop-up  {
+            max-width: 85%;
+            max-height: 85%;
+        }
     }
 
     &-Name {
+        margin: 0 0 30px;
 
+        @include for-desktop-up  {
+            margin: 30px 0 20px;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
     }
 
     &-List {
+        list-style-type: none;
+        margin: 0 0 20px;
+        padding: 0;
+
+        @include for-desktop-up  {
+            margin: 0 0 0px;
+        }
+
+        li {
+            margin: 2px 0;
+
+            span {
+                font-weight: 600;
+            }
+        }
+
         &--Comma {
             &:not(:empty) {
                 ~ {
@@ -21,27 +112,18 @@
                 }
             }
         }
-
-        // &--Comma:not(:empty) ~ --Comma::not(:empty):before {
-        //     content: ", ";
-        // }
     }
 
     &-BorderCountries {
-
+    
+        .Borders {
+            h3 {
+                margin: 0 0 10px;
+            }
+        }
+        @include for-desktop-up  {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
     }
-}
-
-.comma {
-	&:not(:empty) {
-		~ {
-			.comma {
-				&:not(:empty) {
-					&:before {
-						content: ", ";
-					}
-				}
-			}
-		}
-	}
 }

@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { apiCallBegan } from "./api";
-// import { createSelector } from "reselect";
 
 const initialState =  {
     data: [],
@@ -10,6 +9,7 @@ const initialState =  {
     regionFilterOn: false,
     regionSelected: '',
     borderNames: [],
+    bordersLoading: false
 }
 
 const countrySlice = createSlice({
@@ -17,7 +17,7 @@ const countrySlice = createSlice({
     initialState,
     reducers: {
         dataReceived: (state, action) => {
-            state.data =  action.payload
+            state.data = action.payload
             state.loading = false
             state.error = null
         },
@@ -29,6 +29,7 @@ const countrySlice = createSlice({
         apiError: (state, action) => {
             const { error } = action.payload
             state.loading = false
+            state.bordersLoading = false
             state.error = error
         },
 
@@ -42,17 +43,23 @@ const countrySlice = createSlice({
         },
 
         bordersReceived: (state, action) => {
-            state.borderNames =  action.payload
+            state.borderNames = action.payload
+            state.bordersLoading = false
             state.error = null
+        },
+
+        bordersRequested: (state, action) => {
+            state.bordersLoading = true
+            state.borderNames = []
         }
 
     }
 })
 
 // Export Actions
-export const { dataReceived, dataRequested, apiError, searchFilter, regionFilterIntiated, bordersReceived } = countrySlice.actions
+export const { dataReceived, dataRequested, apiError, searchFilter, regionFilterIntiated, bordersReceived, bordersRequested } = countrySlice.actions
 
-export const loadData = () => (dispatch) => {
+export const loadData = () => (dispatch, getState) => {
 
     return dispatch(
         apiCallBegan({
@@ -80,20 +87,20 @@ export const countrySearch = (searchText, fullText) => (dispatch) => {
     );
 }
 
-export const countryBorders = (countryThreeLetterCodes) => (dispatch) => {
+export const countryBorders = (countryThreeLetterCodes) => (dispatch, getState) => {
 
     const codesStr = countryThreeLetterCodes.toString().replaceAll(",",";")
     const url = `alpha?codes=${codesStr};&fields=name`
 
     return dispatch(
         apiCallBegan({
-          url: url,
-          method: 'get',
-          onStart: dataRequested.type,
-          onSuccess: bordersReceived.type,
-          onError: apiError.type
+            url: url,
+            method: 'get',
+            onStart: bordersRequested.type,
+            onSuccess: bordersReceived.type,
+            onError: apiError.type
         })
-      );
+    );
 }
 
 export const filterByRegion = (region) => (dispatch) => {

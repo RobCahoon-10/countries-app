@@ -5,12 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown} from '@fortawesome/free-solid-svg-icons'
 import './Filter.scss'
 
-const Filter = (props) => {
+const Filter = () => {
 
     const dispatch = useDispatch();
     const [selectedText, setSelectedText] = useState("Filter by Region")
     const [displayDropDown, setDisplayDropDown] = useState(false)
-
 
     const handleOnclick = (selection) => {
         handleDisplayDropdown()
@@ -41,7 +40,6 @@ const Filter = (props) => {
                 </ul>
             }
         </div>
-
     )
 }
 

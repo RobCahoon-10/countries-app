@@ -7,21 +7,20 @@
 // Global
 @import 'assets/global.scss';
 
+
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
-  color: white;
+  background-color: $site-background;
+  color: var(--font-color);
   font-family: 'Nunito Sans', sans-serif;
 }
 
 main {
-  display: grid;
-  grid-template-rows: auto 1fr auto;  
   margin: 0 auto;
   max-width: 1440px;
   min-height: 100vh;
-  background-color: $very-dark-blue-dark-mode;
+  background-color: var(--color-primary);
   font-size: 14px;
 }
 

@@ -1,0 +1,23 @@
+@import '../../assets/mixins.scss';
+
+// Global
+@import '../../assets/global.scss';
+
+.Borders {
+    position: relative;
+
+    a {
+        display: inline-block;
+        padding: 10px;
+        background-color: var(--color-secondary);
+        color: var(--font-color);
+        margin: 0 10px 10px 0;
+        text-decoration: none;
+        cursor: pointer;
+        text-align: center;
+        -moz-box-shadow: 0 0 3px var(--color-shadow);
+        -webkit-box-shadow: 0 0 3px var(--color-shadow);
+        box-shadow: 0 0 3px var(--color-shadow);
+        border-radius: 5px;
+    }
+}

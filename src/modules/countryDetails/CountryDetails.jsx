@@ -1,51 +1,56 @@
 import React from 'react'
 import Image from '../../components/image/Image'
+import BackButton from '../../components/backButton/BackButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import './CountryDetails.scss'
+import Borders from '../borders/Borders';
 
 const CountryDetails = (props) => {
 
     const {flag, name, nativeName, population, region, subregion, capital} = props.content[0] ? props.content[0] : []
     const imageData = {url: flag, altText: name }
-
+    const populationFormatted = (population) ? population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : population
+    
     return (
-        <section className="CountryDetails">
-        {flag && 
-            <>
-            <Image className="CountryDetails-Flag" data={imageData} /> 
-
-            <h2 className="CountryDetails-Name">{name}</h2>
-
-            <ul className="CountryDetails-List">
-                <li><strong>Native Name:</strong> {nativeName}</li>
-                <li><strong>Population:</strong> {population}</li>
-                <li><strong>Region:</strong> {region}</li>
-                <li><strong>Sub Region:</strong> {subregion}</li>
-                <li><strong>Capital:</strong> {capital}</li>
-            </ul>
-            
-            <ul className="CountryDetails-List">
-                <li>
-                    <strong>Top Level Domain:</strong> <ArrayInfo className="comma" data={props.content[0]?.topLevelDomain} />
-                </li>
-                <li>
-                    <strong>Currencies:</strong> <ArrayInfo className="comma" data={props.content[0]?.currencies} propertyName={"name"} />
-                </li>
-                <li>
-                    <strong>Languages:</strong> <ArrayInfo className="comma" data={props.content[0]?.languages} propertyName={"name"} />
-                </li>
-            </ul>
-
-            <div className="CountryDetails-BorderCountries">
-                <h3>Border Countries:</h3>
-
-                <ArrayInfo className="" data={props.content[0]?.borders} />
+        <>
+        <div className="CountryDetails-BackButton">
+            <FontAwesomeIcon className="Filter-Container-Icon" icon={faArrowLeft} />
+            <BackButton />
+        </div>
+        <div className="CountryDetails-Main">
+            <div className="CountryDetails-Left">
+                <Image className="CountryDetails-Flag" data={imageData} /> 
             </div>
-            
-            </>
-        
-        }
-        </section>
-        
+            <div className="CountryDetails-Right">
+                <h2 className="CountryDetails-Name">{name}</h2>
+
+                <ul className="CountryDetails-List">
+                    <li><span>Native Name:</span> {nativeName} </li>
+                    <li><span>Population:</span> {populationFormatted} </li>
+                    <li><span>Region:</span> {region} </li>
+                    <li><span>Sub Region:</span> {subregion} </li>
+                    <li><span>Capital:</span> {capital} </li>
+                </ul>
+
+                <ul className="CountryDetails-List">
+                    <li>
+                        <span>Top Level Domain:</span> <ArrayInfo className="comma" data={props.content[0]?.topLevelDomain} />
+                    </li>
+                    <li>
+                        <span>Currencies:</span> <ArrayInfo className="comma" data={props.content[0]?.currencies} propertyName={"name"} />
+                    </li>
+                    <li>
+                        <span>Languages:</span> <ArrayInfo className="comma" data={props.content[0]?.languages} propertyName={"name"} />
+                    </li>
+                </ul>
+
+                <div className="CountryDetails-BorderCountries">
+                    <Borders data={props.content[0]?.borders} />
+                </div>
+            </div>
+        </div>
+        </>
     )
 }
 
@@ -62,7 +67,7 @@ const ArrayInfo = ({data, propertyName, className}) => {
     })
 
     return element
-  }
+}
 
 
 export default CountryDetails
