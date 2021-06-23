@@ -19,14 +19,13 @@ const Filter = () => {
 
     const handleDisplayDropdown = () => {
         const toggledIsOpen = displayDropDown ? false : true;
-
         setDisplayDropDown(toggledIsOpen)
     }
 
     return (
-        <div className="Filter">
-            <div className="Filter-Container" onClick={() => handleDisplayDropdown()}>
-                <p className="Filter-Container-Text">{selectedText}</p>
+        <div className="Filter" tabIndex="1" onBlur={handleDisplayDropdown} onClick={() => handleDisplayDropdown()}>
+            <div className="Filter-Container" >
+                <p   className="Filter-Container-Text">{selectedText}</p>
                 <FontAwesomeIcon className="Filter-Container-Icon" icon={faChevronDown} />
             </div>
 

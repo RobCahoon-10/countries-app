@@ -20,11 +20,27 @@
 
     &-Switcher {   
         cursor: pointer;
+        display: grid;
+        grid-template-columns: 10% 75%;
+        justify-content: right;
+        cursor: pointer;
+
+        @include for-desktop-up  {
+            grid-template-columns: 10% 70%;;
+        }
+
+        svg {
+            margin: 3px 0 0;
+        }
 
         span {
             display: inline-block;
-            margin: 0 0 0 15px;
+            margin: 1px 0 0 10px;
             font-size: 14px;
+
+            @include for-desktop-up  {
+                margin: 0 0 0 15px;
+            }
         }
     }
 
