@@ -9,7 +9,8 @@ const initialState =  {
     regionFilterOn: false,
     regionSelected: '',
     borderNames: [],
-    bordersLoading: false
+    bordersLoading: false,
+    error : null
 }
 
 const countrySlice = createSlice({
@@ -27,10 +28,9 @@ const countrySlice = createSlice({
         },
 
         apiError: (state, action) => {
-            const { error } = action.payload
             state.loading = false
             state.bordersLoading = false
-            state.error = error
+            state.error = action.payload
         },
 
         searchFilter: (state, action) => {

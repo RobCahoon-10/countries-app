@@ -8,9 +8,9 @@ import { LoadingCircle } from '../../components/loading/Loading';
 import { loadData } from "../../redux/countrySlice";
 import './Home.scss'
 
-const Home = (props) => {
+const Home = () => {
     const dispatch = useDispatch();
-    const  { data, loading, displayCount, regionFilterOn, regionSelected }  = useSelector((state) => state.country)
+    const  { data, loading, displayCount, regionFilterOn, regionSelected, error }  = useSelector((state) => state.country)
 
     useEffect(() => {
         dispatch(loadData());
@@ -29,11 +29,19 @@ const Home = (props) => {
                 </div>
             </section>
 
-            <section className="CountryHolder">
-                {loading && <LoadingCircle /> }
+            {error && 
+                <section className="CountryHolder">
+                    <h4 className="CountryHolder-NotFoundText">No countries found</h4>
+                </section>
+            }
 
-                {!loading && <CountryPanel content={data} count={displayCount} /> }
-            </section>
+            {!error && 
+                <section className="CountryHolder">
+                    {loading && <LoadingCircle /> }
+
+                    {!loading && <CountryPanel content={data} count={displayCount} /> }
+                </section>
+            }
         </>
     )
 }

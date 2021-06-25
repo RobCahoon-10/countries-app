@@ -2,63 +2,46 @@
 // Global
 @import '../../assets/global.scss';
 
-.CountryHolder {
+
+.Country {
     display: grid;
-    grid-template-columns: 1fr;
-    padding: 0 40px;
-    position: relative;
-
-    @include for-tablet-portrait-up {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include for-tablet-landscape-up {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    grid-template-rows: 1fr;
+    margin: 20px auto 20px;
+    padding: 0 20px;
 
     @include for-desktop-up  {
-        grid-template-columns: repeat(4, 1fr);
+        width: 300px;
     }
 
-    .Country {
-        display: grid;
-        grid-template-rows: 1fr;
-        margin: 20px auto 20px;
-        padding: 0 20px;
+    &-Flag {
+        max-width: 100%;
+        max-height: 100vh;
+        object-fit: cover;
+        display: block;
 
         @include for-desktop-up  {
-            width: 300px;
+            width:  265px;
+            height: 160px;
+        }
+    }
+
+    &-Details {
+        padding: 20px;
+        margin: 0;
+        list-style: none;
+        background-color: var(--color-secondary);
+
+        &-Name {
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: 600;
         }
 
-        &-Flag {
-            max-width: 100%;
-            max-height: 100vh;
-            object-fit: cover;
-            display: block;
-
-            @include for-desktop-up  {
-                width:  265px;
-                height: 160px;
-            }
-        }
-    
-        &-Details {
-            padding: 20px;
-            margin: 0;
-            list-style: none;
-            background-color: var(--color-secondary);
-
-            &-Name {
-                margin: 10px 0;
-                font-size: 16px;
+        li {
+            span {
                 font-weight: 600;
-            }
-
-            li {
-                span {
-                    font-weight: 600;
-                }
             }
         }
     }
 }
+

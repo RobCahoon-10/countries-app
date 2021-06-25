@@ -1,8 +1,6 @@
 import React from 'react'
 import Image from '../../components/image/Image'
 import BackButton from '../../components/backButton/BackButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import './CountryDetails.scss'
 import Borders from '../borders/Borders';
 
@@ -14,10 +12,8 @@ const CountryDetails = (props) => {
     
     return (
         <>
-        <div className="CountryDetails-BackButton">
-            <FontAwesomeIcon className="Filter-Container-Icon" icon={faArrowLeft} />
-            <BackButton />
-        </div>
+        <BackButton className="CountryDetails-BackButton" />
+
         <div className="CountryDetails-Main">
             <div className="CountryDetails-Left">
                 <Image className="CountryDetails-Flag" data={imageData} /> 
@@ -35,13 +31,16 @@ const CountryDetails = (props) => {
 
                 <ul className="CountryDetails-List">
                     <li>
-                        <span>Top Level Domain:</span> <ArrayInfo className="Comma" data={props.content[0]?.topLevelDomain} />
+                        <span>Top Level Domain:</span> 
+                        <ArrayInfo className="Comma" data={props.content[0]?.topLevelDomain} />
                     </li>
                     <li>
-                        <span>Currencies:</span> <ArrayInfo className="Comma" data={props.content[0]?.currencies} propertyName={"name"} />
+                        <span>Currencies:</span> 
+                        <ArrayInfo className="Comma" data={props.content[0]?.currencies} propertyName={"name"} />
                     </li>
                     <li>
-                        <span>Languages:</span> <ArrayInfo className="Comma" data={props.content[0]?.languages} propertyName={"name"} />
+                        <span>Languages:</span> 
+                        <ArrayInfo className="Comma" data={props.content[0]?.languages} propertyName={"name"} />
                     </li>
                 </ul>
 

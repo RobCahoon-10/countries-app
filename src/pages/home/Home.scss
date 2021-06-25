@@ -30,3 +30,27 @@
 
 
 }
+
+.CountryHolder {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 40px;
+    position: relative;
+
+    @include for-tablet-portrait-up {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include for-tablet-landscape-up {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include for-desktop-up  {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-NotFoundText {
+        padding: 0 40px;
+        font-size: 24px;
+    }
+}

@@ -1,13 +1,17 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 
-const BackButton = () => {
+const BackButton = (props) => {
     let history = useHistory();
+    const {...rest} = props
     
     return (
-        <>
-          <button onClick={() => history.goBack()}>Back</button>
-        </>
+        <div onClick={() => history.goBack()} {...rest}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+            <button>Back</button>
+        </div>
     );
 };
 

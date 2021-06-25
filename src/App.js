@@ -5,6 +5,7 @@ import Error from '../src/pages/error/Error'
 import './App.css';
 
 function App() {
+
   return (
     <main>
         <Switch>
