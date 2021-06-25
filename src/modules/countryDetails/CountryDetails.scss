@@ -102,9 +102,9 @@
         &--Comma {
             &:not(:empty) {
                 ~ {
-                    --Comma {
+                   --Comma {
                         &:not(:empty) {
-                            &:before {
+                            &::before {
                                 content: ", ";
                             }
                         }
@@ -126,4 +126,19 @@
             grid-column-end: 4;
         }
     }
+}
+
+
+.Comma {
+	&:not(:empty) {
+		~ {
+			.Comma {
+				&:not(:empty) {
+					&:before {
+						content: ", ";
+					}
+				}
+			}
+		}
+	}
 }

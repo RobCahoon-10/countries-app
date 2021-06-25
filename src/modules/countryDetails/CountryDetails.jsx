@@ -35,13 +35,13 @@ const CountryDetails = (props) => {
 
                 <ul className="CountryDetails-List">
                     <li>
-                        <span>Top Level Domain:</span> <ArrayInfo className="comma" data={props.content[0]?.topLevelDomain} />
+                        <span>Top Level Domain:</span> <ArrayInfo className="Comma" data={props.content[0]?.topLevelDomain} />
                     </li>
                     <li>
-                        <span>Currencies:</span> <ArrayInfo className="comma" data={props.content[0]?.currencies} propertyName={"name"} />
+                        <span>Currencies:</span> <ArrayInfo className="Comma" data={props.content[0]?.currencies} propertyName={"name"} />
                     </li>
                     <li>
-                        <span>Languages:</span> <ArrayInfo className="comma" data={props.content[0]?.languages} propertyName={"name"} />
+                        <span>Languages:</span> <ArrayInfo className="Comma" data={props.content[0]?.languages} propertyName={"name"} />
                     </li>
                 </ul>
 
