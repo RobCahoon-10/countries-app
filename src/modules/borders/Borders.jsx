@@ -19,14 +19,17 @@ const Borders = (props) => {
         <div className="Borders">
             <h3>Border Countries:</h3>
             
-            { bordersLoading && <LoadingDots /> }
+            { bordersLoading ? (
+                <LoadingDots />
+            ) : (
+                borderNames?.map((item) => { 
+                    const url = `/${item.name}`;
+                    return (
+                        <Link key={item.name} href={url}>{item.name}</Link>
+                    )
+                })
 
-            {!bordersLoading && borderNames?.map((item) => { 
-                const url = `/${item.name}`;
-                return (
-                    <Link key={item.name} href={url}>{item.name}</Link>
-                )
-            })}
+            )}
         </div>
     )
 }

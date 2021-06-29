@@ -31,15 +31,15 @@ const CountryDetails = (props) => {
 
                 <ul className="CountryDetails-List">
                     <li>
-                        <span>Top Level Domain:</span> 
+                        <span>Top Level Domain: </span> 
                         <ArrayInfo className="Comma" data={props.content[0]?.topLevelDomain} />
                     </li>
                     <li>
-                        <span>Currencies:</span> 
+                        <span>Currencies: </span> 
                         <ArrayInfo className="Comma" data={props.content[0]?.currencies} propertyName={"name"} />
                     </li>
                     <li>
-                        <span>Languages:</span> 
+                        <span>Languages: </span> 
                         <ArrayInfo className="Comma" data={props.content[0]?.languages} propertyName={"name"} />
                     </li>
                 </ul>

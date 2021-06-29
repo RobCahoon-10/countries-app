@@ -29,19 +29,13 @@ const Home = () => {
                 </div>
             </section>
 
-            {error && 
-                <section className="CountryHolder">
+            <section className="CountryHolder">
+                {error ? ( 
                     <h4 className="CountryHolder-NotFoundText">No countries found</h4>
-                </section>
-            }
-
-            {!error && 
-                <section className="CountryHolder">
-                    {loading && <LoadingCircle /> }
-
-                    {!loading && <CountryPanel content={data} count={displayCount} /> }
-                </section>
-            }
+                ) : (
+                    loading ? (<LoadingCircle />) : (<CountryPanel content={data} count={displayCount} />)
+                )}
+            </section>
         </>
     )
 }

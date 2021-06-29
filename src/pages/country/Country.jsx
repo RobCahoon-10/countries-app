@@ -20,8 +20,7 @@ const Country = ({match:{params:{country}}}) => {
             <Header />
 
             <section className="CountryDetails">
-                {loading && <LoadingCircle /> }
-                {!loading && <CountryDetails content={data} />} 
+                {loading ? (<LoadingCircle />) : (<CountryDetails content={data} />)}
             </section>
         </>
     )
