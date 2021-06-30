@@ -9,7 +9,7 @@ const CountryDetails = (props) => {
     const {flag, name, nativeName, population, region, subregion, capital} = props.content[0] ? props.content[0] : []
     const imageData = {url: flag, altText: name }
     const populationFormatted = (population) ? population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : population
-    
+
     return (
         <>
         <BackButton className="CountryDetails-BackButton" />
@@ -44,9 +44,12 @@ const CountryDetails = (props) => {
                     </li>
                 </ul>
 
-                <div className="CountryDetails-BorderCountries">
-                    <Borders data={props.content[0]?.borders} />
-                </div>
+                {props.content[0]?.borders.length > 0 && 
+                    <div className="CountryDetails-BorderCountries">
+                        <Borders data={props.content[0]?.borders} />
+                    </div>
+                }
+                
             </div>
         </div>
         </>

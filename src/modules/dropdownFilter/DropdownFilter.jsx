@@ -3,9 +3,9 @@ import { filterByRegion } from "../../redux/countrySlice";
 import { useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown} from '@fortawesome/free-solid-svg-icons'
-import './Filter.scss'
+import './DropdownFilter.scss'
 
-const Filter = () => {
+const DropdownFilter = () => {
 
     const dispatch = useDispatch();
     const [selectedText, setSelectedText] = useState("Filter by Region")
@@ -27,14 +27,14 @@ const Filter = () => {
     }
 
     return (
-        <div className="Filter" tabIndex="1" onBlur={handleOnBlur} onClick={() => handleDisplayDropdown()}>
-            <div className="Filter-Container" >
-                <p className="Filter-Container-Text">{selectedText}</p>
-                <FontAwesomeIcon className="Filter-Container-Icon" icon={faChevronDown} />
+        <div className="DropdownFilter" tabIndex="1" onBlur={handleOnBlur} onClick={() => handleDisplayDropdown()}>
+            <div className="DropdownFilter-Container" >
+                <p className="DropdownFilter-Container-Text">{selectedText}</p>
+                <FontAwesomeIcon className="DropdownFilter-Container-Icon" icon={faChevronDown} />
             </div>
 
             {displayDropDown && 
-                <ul className="Filter-Dropdown">
+                <ul className="DropdownFilter-Dropdown">
                     <li onClick={() => handleOnclick("africa")}>Africa</li>
                     <li onClick={() => handleOnclick("americas")}>Americas</li>
                     <li onClick={() => handleOnclick("asia")}>Asia</li>
@@ -46,4 +46,4 @@ const Filter = () => {
     )
 }
 
-export default Filter
+export default DropdownFilter

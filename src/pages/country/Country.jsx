@@ -5,8 +5,6 @@ import Header from '../../modules/header/Header';
 import { LoadingCircle } from '../../components/loading/Loading';
 import { countrySearch } from "../../redux/countrySlice";
 
-import './Country.scss'
-
 const Country = ({match:{params:{country}}}) => {
     const dispatch = useDispatch();
     const  { data, loading }  = useSelector((state) => state.country)

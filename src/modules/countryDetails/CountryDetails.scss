@@ -116,11 +116,6 @@
 
     &-BorderCountries {
     
-        .Borders {
-            h3 {
-                margin: 0 0 10px;
-            }
-        }
         @include for-desktop-up  {
             grid-column-start: 1;
             grid-column-end: 4;
