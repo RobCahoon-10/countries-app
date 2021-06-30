@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import Home from '../src/pages/home/Home'
 import Country from '../src/pages/country/Country'
-import Error from '../src/pages/error/Error'
+import ErrorPage from './pages/errorPage/ErrorPage'
 import './App.css';
 
 function App() {
@@ -10,8 +10,9 @@ function App() {
     <main>
         <Switch>
           <Route path='/' component={Home} exact />
-          <Route path='/:country' component={Country} />
-          <Route component={Error} />
+          <Route path='/country/:country' component={Country} />
+          <Route path='/Error' component={ErrorPage} />
+          <Route path='*' component={ErrorPage} />
         </Switch>
     </main>
   );

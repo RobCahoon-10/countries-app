@@ -23,7 +23,7 @@ const Borders = (props) => {
                 <LoadingDots />
             ) : (
                 borderNames?.map((item) => { 
-                    const url = `/${item.name}`;
+                    const url = `/country/${item.name}`;
                     return (
                         <Link key={item.name} href={url}>{item.name}</Link>
                     )

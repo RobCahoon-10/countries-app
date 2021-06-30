@@ -4,14 +4,19 @@ import CountryDetails from '../../modules/countryDetails/CountryDetails';
 import Header from '../../modules/header/Header';
 import { LoadingCircle } from '../../components/loading/Loading';
 import { countrySearch } from "../../redux/countrySlice";
+import  { Redirect } from 'react-router-dom'
 
 const Country = ({match:{params:{country}}}) => {
     const dispatch = useDispatch();
-    const  { data, loading }  = useSelector((state) => state.country)
+    const  { data, loading, error }  = useSelector((state) => state.country)
 
     useEffect(() => {
         dispatch(countrySearch(country, true));        
-    }, [dispatch, country]) 
+    }, [dispatch, country])
+    
+    if(error) {
+        return <Redirect to='/Error'  />
+    }
 
     return (
         <>

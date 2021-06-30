@@ -1,0 +1,18 @@
+@import '../../assets/mixins.scss';
+// Global
+@import '../../assets/global.scss';
+
+.ErrorHolder {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 40px;
+    position: relative;
+
+    @include for-desktop-up  {
+        padding: 0 80px;
+    }
+
+    a {
+        color: var(--font-color);
+    }
+}

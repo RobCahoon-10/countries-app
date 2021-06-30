@@ -11,7 +11,7 @@ const CountryPanel = (props) => {
 
                 const {name, flag, population, region, capital} = item
                 const imageData = {url: flag, altText: name }
-                const href = "/" + name
+                const href = "/country/" + name
                 const populationFormatted = population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                 
                 return (    
