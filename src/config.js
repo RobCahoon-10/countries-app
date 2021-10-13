@@ -8,8 +8,8 @@ config.app = {
 }
 
 config.countries = {
-    domain: "https://restcountries.eu/",
-    contextPath: "rest/v2/"
+    domain: "https://restcountries.com/",
+    contextPath: "v2/"
 }
 
 
